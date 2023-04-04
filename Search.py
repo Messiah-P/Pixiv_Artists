@@ -1,5 +1,5 @@
 # 通过输入的信息来获取作品id
-from HTMLDownloader import HTMLDownloader
+from html_downloader import HTMLDownloader
 import json
 import math
 import re
@@ -15,7 +15,7 @@ class Artist(object):
         self.search_url = "https://www.pixiv.net/ajax/user/" + userid + "/profile/all?lang=zh"
 
     @retry(stop_max_attempt_number=3)
-    def get_illust_ids(self, source,deduplicate_list):
+    def get_illust_ids(self, deduplicate_list):
         # 返回有作品id的集合
         # 获取json格式的字符串
         h = HTMLDownloader.get_html(self.search_url)
