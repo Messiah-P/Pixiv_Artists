@@ -1,13 +1,13 @@
 import os
 
-import FormatName
-from HTMLDownloader import HTMLDownloader
-from HTMLParser import HTMLParser
+import format_pic_name
+from html_downloader import HTMLDownloader
+from html_parser import HTMLParser
 import zipfile
 import imageio
-import ModifyTime
+import get_create_time
 
-class DataOutPut(object):
+class SinglePic(object):
     def __init__(self):
         self.count = 0
 

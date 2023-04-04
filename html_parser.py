@@ -1,4 +1,4 @@
-from HTMLDownloader import HTMLDownloader
+from html_downloader import HTMLDownloader
 from bs4 import BeautifulSoup
 import json
 
