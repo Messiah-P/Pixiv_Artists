@@ -2,7 +2,7 @@ import requests
 import traversal
 from get_single_pic import SinglePic
 from search import Artist
-import MultiThreadDownload
+from multi_thread_download import multi_download
 import numpy as np
 from openpyxl import load_workbook
 from config import artists_info, ARTISTS_DIR, LOGO_PIXIV, HEAD_BARK
@@ -28,7 +28,7 @@ def get_illust(artists_list, existed_pids):
              bark_new = bark_new + '\n' + bark_info
              #创建多线程下载
              log_output(f"创建多线程下载ing...")
-             MultiThreadDownload.multi_download(illust_ids, 0, ARTISTS_DIR)
+             multi_download(illust_ids, 0, ARTISTS_DIR)
          else:
              log_output(f"{artist_name}没有作品更新。")
              bark_null = bark_null + '\n' + artist_name

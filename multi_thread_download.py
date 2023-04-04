@@ -1,8 +1,8 @@
 # 多线程下载图片
 import threading
 from threading import Thread
-from HTMLParser import HTMLParser
-from DataOutPut import DataOutPut
+from html_parser import HTMLParser
+from get_single_pic import SinglePic
 import math
 from retrying import retry
 
@@ -14,7 +14,7 @@ def download(illust_ids, min_count, file_path, id_count):
     global count
     # 下载id列表中的所有图片
     h = HTMLParser()
-    d = DataOutPut()
+    d = SinglePic()
     for illust in illust_ids:
         resource = h.get_resource(illust)
         d.download_img(resource, min_count, file_path)
