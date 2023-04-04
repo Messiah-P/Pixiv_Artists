@@ -1,11 +1,11 @@
 import os
 
-import format_pic_name
 from html_downloader import HTMLDownloader
 from html_parser import HTMLParser
 import zipfile
 import imageio
-import get_create_time
+from get_create_time import modify_date
+from format_filename import filename
 
 class SinglePic(object):
     def __init__(self):
@@ -52,8 +52,8 @@ class SinglePic(object):
         pid = file_url.split('/')[-1].split('_')[0]
         suff = file_url.split('/')[-1].split('_')[1]
         # 替换画名中的'/'防止影响路径识别
-        userName = FormatName.fileName(userName)
-        illustTitle = FormatName.fileName(illustTitle)
+        userName = filename()(userName)
+        illustTitle = filename(illustTitle)
         file_name = '/%s - %s - [pid=%s]-%s' % (userName, illustTitle, pid, suff)
         #file_name = HTMLDownloader.getSinglePic(id, file_url)
         file_path = os.path.join(file_path, userName)
@@ -62,7 +62,7 @@ class SinglePic(object):
         with open(file_path + file_name, mode='wb') as fw:
             fw.write(content)
             file_path_full = file_path + file_name
-            ModifyTime.Modify(file_path_full, createDate)
+            modify_date(file_path_full, createDate)
         return file_name
 
     def open_zip(self, file_path, file_name, resource):
@@ -98,7 +98,7 @@ class SinglePic(object):
             num += 1
         # 合成gif文件
         imageio.mimsave(gif_file, imgs, "GIF", duration=delay_list)
-        ModifyTime.Modify(gif_file, createDate)
+        modify_date(gif_file, createDate)
 
     def ugoira_download(self, resource, file_path):
         # 下载动图

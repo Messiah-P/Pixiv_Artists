@@ -19,7 +19,7 @@ def get_illust(artists_list, existed_pids):
          pic = SinglePic()
          pic.mkdir(ARTISTS_DIR)
          # 创建对象获取该画师插画列表
-         log_output(f"正在获取{artist_name}的插画ing...")
+         log_output(f"正在获取{artist_name}的插画...")
          artist = Artist(artist_id)
          illust_ids = list(artist.get_illust_ids(existed_pids))
          if len(illust_ids) != 0:
@@ -27,7 +27,7 @@ def get_illust(artists_list, existed_pids):
              bark_info = ('画师: ' + artist_name + '\n' +'更新数: ' + str(len(illust_ids)))
              bark_new = bark_new + '\n' + bark_info
              #创建多线程下载
-             log_output(f"创建多线程下载ing...")
+             log_output(f"创建多线程下载...")
              multi_download(illust_ids, 0, ARTISTS_DIR)
          else:
              log_output(f"{artist_name}没有作品更新。")

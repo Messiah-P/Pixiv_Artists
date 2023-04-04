@@ -1,5 +1,5 @@
 
-def fileName(name):
+def filename(name):
     is_contain_ch="/" in name
     if is_contain_ch:
         nameList = name.split('/')
