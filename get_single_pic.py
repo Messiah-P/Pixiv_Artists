@@ -52,7 +52,7 @@ class SinglePic(object):
         pid = file_url.split('/')[-1].split('_')[0]
         suff = file_url.split('/')[-1].split('_')[1]
         # 替换画名中的'/'防止影响路径识别
-        userName = filename()(userName)
+        userName = filename(userName)
         illustTitle = filename(illustTitle)
         file_name = '/%s - %s - [pid=%s]-%s' % (userName, illustTitle, pid, suff)
         #file_name = HTMLDownloader.getSinglePic(id, file_url)
