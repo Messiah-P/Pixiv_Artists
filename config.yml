@@ -6,7 +6,7 @@ paths:
     - /mnt/photo/Pixiv
     - /mnt/photo/画师
   log_path: /mnt/nfs/Config/Log/Pixiv_Artists
-  artists_info: /mnt/python/Painter/Pixiv.xlsx
+  artists_info: /mnt/python/Pixiv_Artists/Pixiv.xlsx
 
 # 链接配置
 links:

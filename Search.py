@@ -9,13 +9,13 @@ from queue import Queue
 
 
 class Artist(object):
-    def __init__(self, userid):
+    def __init__(self, uid):
         # 初始化对象时传入画师id
         # 将其自动转换成获取作品id的url
-        self.search_url = "https://www.pixiv.net/ajax/user/" + userid + "/profile/all?lang=zh"
+        self.search_url = "https://www.pixiv.net/ajax/user/" + uid + "/profile/all?lang=zh"
 
     @retry(stop_max_attempt_number=3)
-    def get_illust_ids(self, deduplicate_list):
+    def get_pids(self, existed_pids):
         # 返回有作品id的集合
         # 获取json格式的字符串
         h = HTMLDownloader.get_html(self.search_url)
@@ -23,14 +23,14 @@ class Artist(object):
         j = json.loads(h)
         # 获取包含插画id的字典
         illusts = j["body"]['illusts']
-        illust_ids = set()
+        pids = set()
         # 如果illusts不为空
         if illusts:
             # 循环illusts，并将作品id放入集合中,去重
             for illust in illusts:
-                if illust not in deduplicate_list:
-                    illust_ids.add(illust)
-        return illust_ids
+                if illust not in existed_pids:
+                    pids.add(illust)
+        return pids
 
 
 class Tags(object):
