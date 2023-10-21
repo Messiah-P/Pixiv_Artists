@@ -6,7 +6,7 @@ def get_filelist(src_path, Filelist):
             if os.path.basename(src_path) != "._.DS_Store":
                 Filelist.append(src_path)
 
-    elif os.path.isdir(src_path):
+    elif os.path.isdir(src_path) and not os.path.basename(src_path) == "@eaDir":
         for s in os.listdir(src_path):
             newDir = os.path.join(src_path, s)
             get_filelist(newDir, Filelist)
