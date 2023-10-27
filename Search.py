@@ -22,6 +22,7 @@ class Artist(object):
         # 将json格式的字符串转换成字典格式
         j = json.loads(h)
         # 获取包含插画id的字典
+        #print(j)
         illusts = j["body"]['illusts']
         pids = set()
         # 如果illusts不为空

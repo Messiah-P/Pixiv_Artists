@@ -1,5 +1,5 @@
 import os
-from config import log_path, time_now
+from conf.config import log_path, time_now
 
 def log_output(msg):
     """

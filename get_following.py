@@ -2,7 +2,7 @@ import numpy as np
 
 from following.crawler import Crawler
 from openpyxl import load_workbook
-from config import artists_info
+from conf.config import artists_info
 from log import log_output
 
 

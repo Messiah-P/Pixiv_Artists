@@ -2,8 +2,8 @@ import datetime
 import yaml
 
 # 读取YAML文件
-with open("/mnt/python/Pixiv_Artists/config.yml", "r") as f:
-    config = yaml.safe_load(f)
+ with open("/mnt/python/Pixiv_Artists/config.yml", "r") as f:
+     config = yaml.safe_load(f)
 
 
 # 获取Headers配置

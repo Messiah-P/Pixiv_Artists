@@ -6,7 +6,7 @@ from get_single_pic import SinglePic
 from search import Artist
 from multi_thread_download import multi_download
 
-from config import ARTISTS_DIR, LOGO_PIXIV, HEAD_BARK
+from conf.config import ARTISTS_DIR, LOGO_PIXIV, HEAD_BARK
 from log import log_output
 
 def get_illust(artists_list, existed_pids):

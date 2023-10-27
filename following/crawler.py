@@ -10,7 +10,7 @@ import re
 from following.downer import Downloader
 from following.log_record import logger
 from following.message import TEMP_MSG
-from config import uid
+from conf.config import uid
 
 
 class Crawler(object):

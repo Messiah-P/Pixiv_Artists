@@ -5,11 +5,11 @@ import time
 from requests.adapters import HTTPAdapter
 import requests
 from fake_useragent import UserAgent
-from config import cookie
+from conf.config import cookie
 from log import log_output
 
 repeat = 1
-user_agent = UserAgent(verify_ssl=False).random
+user_agent = UserAgent().random
 
 
 class HTMLDownloader():
