@@ -6,7 +6,7 @@ import zipfile
 import imageio
 from get_create_time import modify_date
 from format_filename import filename
-from config import ARTISTS_DIR
+from conf.config import ARTISTS_DIR
 
 class SinglePic(object):
     def __init__(self):

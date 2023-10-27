@@ -8,7 +8,7 @@ author: coder_sakura
 import time
 import requests
 
-from config import uid_cookie
+from conf.config import uid_cookie
 from following.log_record import logger
 from following.message import TEMP_MSG
 # 强制取消警告

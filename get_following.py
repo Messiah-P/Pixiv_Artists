@@ -4,8 +4,6 @@ from following.crawler import Crawler
 from openpyxl import load_workbook
 from conf.config import artists_info
 from log import log_output
-
-
 class GetFollowing(object):
     def __init__(self):
         self.artists_info = artists_info

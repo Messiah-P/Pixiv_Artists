@@ -13,7 +13,7 @@ def get_illust(artists_list, existed_pids):
      # 通过输入构造目录
      bark_new = '--更新画作--'
      bark_null = '--未更新--'
-     for i in range(len(artists_list)): #遍历行
+     for i in range(len(artists_list)): #遍历行（画师）
          artist_name = artists_list[i][0]
          uid = artists_list[i][1]
          log_output(f"画师:{artist_name} - {uid}")
@@ -39,9 +39,11 @@ def get_illust(artists_list, existed_pids):
      print('\n下载结束啦')
 
 if __name__ == '__main__':
+    # 获取关注列表
     f = get_following.GetFollowing()
-    #获取关注列表
+    #更新关注列表
     artists_list = f.update_userlist()
     print(artists_list)
+
     existed_pids = traversal.all_pids(ARTISTS_DIR)
     get_illust(artists_list, existed_pids)

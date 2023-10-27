@@ -1,8 +1,9 @@
+import os
 import datetime
 import yaml
 
 # 读取YAML文件
- with open("/mnt/python/Pixiv_Artists/config.yml", "r") as f:
+with open(os.path.join(os.path.dirname(__file__), 'config.yml'), "r") as f:
      config = yaml.safe_load(f)
 
 
